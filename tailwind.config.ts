@@ -64,15 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				astro: {
-					purple: '#9b87f5',
-					'dark-purple': '#6E59A5',
-					'light-purple': '#E5DEFF',
-					gold: '#F7D44C',
-					'light-gold': '#FDEDC2',
-					'dark-blue': '#1A1F2C',
-					cream: '#FDE1D3',
-					'vital-red': '#C42126',    // Traditional Hindu red
-					'sacred-saffron': '#FF7722' // Sacred saffron color
+					purple: '#C42126',            // Changed to Vital red
+					'dark-purple': '#9B2226',     // Darker shade of Vital red
+					'light-purple': '#FFDAD8',    // Light shade of Vital red
+					gold: '#FF7722',              // Changed to sacred saffron  
+					'light-gold': '#FFE3CC',      // Light shade of sacred saffron
+					'dark-blue': '#1A1F2C',       // Kept existing dark blue
+					cream: '#FDE1D3',             // Kept existing cream
+					'vital-red': '#C42126',       // Added as explicit color
+					'sacred-saffron': '#FF7722'   // Added as explicit color
 				}
 			},
 			fontFamily: {

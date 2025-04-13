@@ -17,7 +17,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 263 83% 74%;
+    --primary: 357 73% 45%;  /* Vital red as primary */
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 4.8% 95.9%;
@@ -26,7 +26,7 @@
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 45 89% 63%;
+    --accent: 25 100% 57%;  /* Sacred saffron as accent */
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +34,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 263 83% 74%;
+    --ring: 357 73% 45%;    /* Vital red as ring */
 
     --radius: 0.5rem;
   }
@@ -48,8 +48,8 @@
   }
 
   .celestial-bg {
-    background-image: radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.15) 0%, rgba(155, 135, 245, 0) 70%),
-                    radial-gradient(circle at 80% 20%, rgba(247, 212, 76, 0.1) 0%, rgba(247, 212, 76, 0) 60%);
+    background-image: radial-gradient(circle at 50% 50%, rgba(196, 33, 38, 0.15) 0%, rgba(196, 33, 38, 0) 70%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 119, 34, 0.1) 0%, rgba(255, 119, 34, 0) 60%);
   }
   
   .constellation {
@@ -78,14 +78,14 @@
   }
   
   .gold-gradient {
-    background: linear-gradient(to right, #F7D44C, #fdedb5, #F7D44C);
+    background: linear-gradient(to right, #FF7722, #ffb380, #FF7722);
     -webkit-background-clip: text;
     color: transparent;
   }
   
   .cosmic-border {
     position: relative;
-    border: 1px solid rgba(155, 135, 245, 0.3);
+    border: 1px solid rgba(196, 33, 38, 0.3);
     border-radius: 0.5rem;
   }
   
@@ -96,7 +96,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, rgba(155, 135, 245, 0.5), rgba(247, 212, 76, 0.5));
+    background: linear-gradient(45deg, rgba(196, 33, 38, 0.5), rgba(255, 119, 34, 0.5));
     border-radius: 0.6rem;
     z-index: -1;
     opacity: 0.4;
