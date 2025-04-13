@@ -71,6 +71,8 @@ export default {
 					'light-gold': '#FDEDC2',
 					'dark-blue': '#1A1F2C',
 					cream: '#FDE1D3',
+					'vital-red': '#C42126',    // Traditional Hindu red
+					'sacred-saffron': '#FF7722' // Sacred saffron color
 				}
 			},
 			fontFamily: {

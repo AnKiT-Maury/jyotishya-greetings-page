@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const GallerySection = () => {
   const gallery = [
@@ -39,18 +41,18 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="gallery" className="section-padding bg-astro-light-purple/30">
+    <section id="gallery" className="section-padding bg-[#FFF9F5]/50">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center mb-4">
-            <div className="h-px w-8 bg-astro-gold"></div>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mx-4 text-astro-dark-purple">
-              🖼️ Image <span className="gold-gradient">Gallery</span>
+            <div className="h-px w-8 bg-[#FF7722]"></div>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mx-4 text-[#C42126]">
+              🖼️ Image <span className="text-[#FF7722]">Gallery</span>
             </h2>
-            <div className="h-px w-8 bg-astro-gold"></div>
+            <div className="h-px w-8 bg-[#FF7722]"></div>
           </div>
           <div className="flex justify-center mb-6">
-            <div className="h-1 w-20 bg-gradient-to-r from-astro-purple to-astro-gold rounded-full"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-[#C42126] to-[#FF7722] rounded-full"></div>
           </div>
           <p className="text-gray-700">
             Glimpses of our spiritual journey, consultations, and sacred ceremonies.
@@ -58,7 +60,7 @@ const GallerySection = () => {
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {gallery.map((item, index) => (
+          {gallery.slice(0, 8).map((item, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-md">
               <AspectRatio ratio={1 / 1}>
                 <img 
@@ -67,11 +69,21 @@ const GallerySection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </AspectRatio>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#C42126]/70 via-[#C42126]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <p className="text-white p-3 text-sm font-medium">{item.caption}</p>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <Link 
+            to="/gallery" 
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#C42126] to-[#FF7722] text-white rounded-full hover:from-[#B31E22] hover:to-[#E56B1F] transition-all font-medium"
+          >
+            View Full Gallery
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>
