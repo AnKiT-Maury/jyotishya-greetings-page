@@ -4,60 +4,80 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState<{image: string, caption: string} | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const gallery = [
     {
       image: "https://img.freepik.com/free-photo/indian-priest-traditional-clothes_23-2149247331.jpg",
-      caption: "Acharya Ji performing a consultation"
+      caption: "आचार्य जी परामर्श देते हुए"
     },
     {
       image: "https://img.freepik.com/free-photo/medium-shot-man-reading-indoors_23-2149142147.jpg",
-      caption: "Studying ancient texts"
+      caption: "प्राचीन ग्रंथों का अध्ययन"
     },
     {
       image: "https://img.freepik.com/free-photo/religious-offering-arrangement-with-candle_23-2149064529.jpg",
-      caption: "Graha Shanti Puja ceremony"
+      caption: "ग्रह शांति पूजा समारोह"
     },
     {
       image: "https://img.freepik.com/free-photo/arrangement-with-traditional-holi-powder_23-2149088060.jpg",
-      caption: "Navgraha Puja materials"
+      caption: "नवग्रह पूजा सामग्री"
     },
     {
       image: "https://img.freepik.com/free-photo/beautiful-arrangement-with-incense-prayer-beads_23-2149053508.jpg",
-      caption: "Special ritual arrangement"
+      caption: "विशेष अनुष्ठान व्यवस्था"
     },
     {
       image: "https://img.freepik.com/free-photo/interior-shot-hindu-temple_53876-43350.jpg",
-      caption: "Visit to sacred temple"
+      caption: "पवित्र मंदिर में दर्शन"
     },
     {
       image: "https://img.freepik.com/free-photo/house-model-ganesh-figurine_23-2147817898.jpg",
-      caption: "Vaastu consultation for new home"
+      caption: "नए घर के लिए वास्तु परामर्श"
     },
     {
       image: "https://img.freepik.com/free-photo/medium-shot-woman-praying-with-incenses_23-2149542718.jpg",
-      caption: "Client participating in ritual"
+      caption: "यजमान अनुष्ठान में भाग लेते हुए"
     },
     {
       image: "https://img.freepik.com/free-photo/man-praying-with-candles_23-2149333518.jpg",
-      caption: "Special puja ceremony"
+      caption: "विशेष पूजा समारोह"
     },
     {
       image: "https://img.freepik.com/free-photo/spiritual-offering-with-flowers-candle_23-2149064534.jpg",
-      caption: "Sacred offering arrangement"
+      caption: "पवित्र पूजा सामग्री व्यवस्था"
     },
     {
       image: "https://img.freepik.com/free-photo/temple-with-golden-decorations_23-2149516353.jpg",
-      caption: "Temple visit for special blessing"
+      caption: "विशेष आशीर्वाद के लिए मंदिर यात्रा"
     },
     {
       image: "https://img.freepik.com/free-photo/smiling-indian-man-casual-clothes_23-2149436921.jpg",
-      caption: "Personal consultation session"
+      caption: "व्यक्तिगत परामर्श सत्र"
     }
   ];
+
+  const openImageAtIndex = (index: number) => {
+    setCurrentIndex(index);
+    setSelectedImage(gallery[index]);
+  };
+
+  const handlePrevious = () => {
+    const newIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    setCurrentIndex(newIndex);
+    setSelectedImage(gallery[newIndex]);
+  };
+
+  const handleNext = () => {
+    const newIndex = (currentIndex + 1) % gallery.length;
+    setCurrentIndex(newIndex);
+    setSelectedImage(gallery[newIndex]);
+  };
 
   return (
     <div className="min-h-screen bg-[#FFF9F5]">
@@ -67,14 +87,14 @@ const GalleryPage = () => {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-[#C42126]">
-                Sacred <span className="text-[#FF7722]">Gallery</span>
+                पवित्र <span className="text-[#FF7722]">गैलरी</span>
               </h1>
               <div className="flex justify-center mb-6">
                 <div className="h-1 w-32 bg-gradient-to-r from-[#C42126] to-[#FF7722] rounded-full"></div>
               </div>
               <p className="text-gray-700 md:text-lg">
-                Explore our collection of spiritual moments, sacred ceremonies, and consultations. 
-                Click on any image to view in full detail.
+                आध्यात्मिक क्षणों, पवित्र समारोहों और परामर्श की हमारी संग्रह का अन्वेषण करें। 
+                पूर्ण विवरण में देखने के लिए किसी भी छवि पर क्लिक करें।
               </p>
             </div>
             
@@ -83,7 +103,7 @@ const GalleryPage = () => {
                 <div
                   key={index}
                   className="group relative overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-transform hover:scale-[1.02]"
-                  onClick={() => setSelectedImage(item)}
+                  onClick={() => openImageAtIndex(index)}
                 >
                   <AspectRatio ratio={1 / 1}>
                     <img 
@@ -102,7 +122,7 @@ const GalleryPage = () => {
         </section>
 
         <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl w-[90vw] p-0 overflow-hidden bg-black/90 border-[#FF7722]">
+          <DialogContent className="max-w-4xl w-[90vw] p-1 overflow-hidden bg-black/90 border-[#FF7722]">
             {selectedImage && (
               <div className="relative">
                 <img 
@@ -112,6 +132,30 @@ const GalleryPage = () => {
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                   <p className="text-white text-lg font-medium">{selectedImage.caption}</p>
+                </div>
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2 flex justify-between w-full px-4">
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="h-10 w-10 rounded-full bg-white/20 hover:bg-white/40 border-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrevious();
+                    }}
+                  >
+                    <ChevronLeft className="h-6 w-6 text-white" />
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="h-10 w-10 rounded-full bg-white/20 hover:bg-white/40 border-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNext();
+                    }}
+                  >
+                    <ChevronRight className="h-6 w-6 text-white" />
+                  </Button>
                 </div>
               </div>
             )}

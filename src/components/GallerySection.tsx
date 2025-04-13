@@ -8,35 +8,35 @@ const GallerySection = () => {
   const gallery = [
     {
       image: "https://img.freepik.com/free-photo/indian-priest-traditional-clothes_23-2149247331.jpg",
-      caption: "Acharya Ji performing a consultation"
+      caption: "आचार्य जी परामर्श देते हुए"
     },
     {
       image: "https://img.freepik.com/free-photo/medium-shot-man-reading-indoors_23-2149142147.jpg",
-      caption: "Studying ancient texts"
+      caption: "प्राचीन ग्रंथों का अध्ययन"
     },
     {
       image: "https://img.freepik.com/free-photo/religious-offering-arrangement-with-candle_23-2149064529.jpg",
-      caption: "Graha Shanti Puja ceremony"
+      caption: "ग्रह शांति पूजा समारोह"
     },
     {
       image: "https://img.freepik.com/free-photo/arrangement-with-traditional-holi-powder_23-2149088060.jpg",
-      caption: "Navgraha Puja materials"
+      caption: "नवग्रह पूजा सामग्री"
     },
     {
       image: "https://img.freepik.com/free-photo/beautiful-arrangement-with-incense-prayer-beads_23-2149053508.jpg",
-      caption: "Special ritual arrangement"
+      caption: "विशेष अनुष्ठान व्यवस्था"
     },
     {
       image: "https://img.freepik.com/free-photo/interior-shot-hindu-temple_53876-43350.jpg",
-      caption: "Visit to sacred temple"
+      caption: "पवित्र मंदिर में दर्शन"
     },
     {
       image: "https://img.freepik.com/free-photo/house-model-ganesh-figurine_23-2147817898.jpg",
-      caption: "Vaastu consultation for new home"
+      caption: "नए घर के लिए वास्तु परामर्श"
     },
     {
       image: "https://img.freepik.com/free-photo/medium-shot-woman-praying-with-incenses_23-2149542718.jpg",
-      caption: "Client participating in ritual"
+      caption: "यजमान अनुष्ठान में भाग लेते हुए"
     }
   ];
 
@@ -47,7 +47,7 @@ const GallerySection = () => {
           <div className="flex items-center justify-center mb-4">
             <div className="h-px w-8 bg-astro-sacred-saffron"></div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mx-4 text-astro-vital-red">
-              🖼️ Image <span className="text-astro-sacred-saffron">Gallery</span>
+              🖼️ छवि <span className="text-astro-sacred-saffron">गैलरी</span>
             </h2>
             <div className="h-px w-8 bg-astro-sacred-saffron"></div>
           </div>
@@ -55,7 +55,7 @@ const GallerySection = () => {
             <div className="h-1 w-20 bg-gradient-to-r from-astro-vital-red to-astro-sacred-saffron rounded-full"></div>
           </div>
           <p className="text-gray-700">
-            Glimpses of our spiritual journey, consultations, and sacred ceremonies.
+            हमारी आध्यात्मिक यात्रा, परामर्श और पवित्र समारोहों की झलक।
           </p>
         </div>
         
@@ -81,7 +81,7 @@ const GallerySection = () => {
             to="/gallery" 
             className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-astro-vital-red to-astro-sacred-saffron text-white rounded-full hover:from-[#B31E22] hover:to-[#E56B1F] transition-all font-medium"
           >
-            View Full Gallery
+            संपूर्ण गैलरी देखें
             <ArrowRight size={18} />
           </Link>
         </div>
