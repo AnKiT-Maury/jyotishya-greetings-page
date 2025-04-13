@@ -1,21 +1,23 @@
 
 import React from 'react';
-import { Star, Award, Users, Book } from "lucide-react";
+import { Star, Award, Users, Book, Heart } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-astro-light-purple/30 cosmic-border">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-astro-dark-purple">
-            About <span className="gold-gradient">Pandit Sharma</span>
-          </h2>
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-px w-8 bg-astro-gold"></div>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mx-4 text-astro-dark-purple">
+              🙏 About <span className="gold-gradient">Acharya</span>
+            </h2>
+            <div className="h-px w-8 bg-astro-gold"></div>
+          </div>
           <div className="flex justify-center mb-6">
             <div className="h-1 w-20 bg-gradient-to-r from-astro-purple to-astro-gold rounded-full"></div>
           </div>
-          <p className="text-gray-700">
-            A seventh-generation astrologer carrying forward the ancient tradition of Vedic astrology with modern insights.
-          </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -46,6 +48,16 @@ const AboutSection = () => {
             
             <p className="mb-6 text-gray-700">
               Having completed formal education in Sanskrit and Vedic studies from Banaras Hindu University, he combines traditional knowledge with contemporary understanding to provide accurate readings that have helped thousands transform their lives.
+            </p>
+            
+            <Separator className="my-6" />
+            
+            <h4 className="font-serif text-xl font-semibold mb-4 text-astro-dark-purple flex items-center">
+              <Heart className="h-5 w-5 text-astro-purple mr-2" /> Our Philosophy
+            </h4>
+            
+            <p className="mb-6 text-gray-700">
+              "The stars incline, they do not compel." Our mission is to provide guidance, not just predictions. We believe that astrology is a tool for self-awareness and growth, empowering individuals to make informed decisions while respecting their free will.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
